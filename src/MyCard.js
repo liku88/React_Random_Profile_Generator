@@ -1,0 +1,45 @@
+import React from 'react';
+import {Card , CardBody , CardText, CardTitle} from 'reactstrap'
+import {FaEnvelope, FaPhone , FaMapMarkedAlt} from 'react-icons/fa'
+
+const MyCard = ({details}) => {
+    return (
+   <Card >
+   <CardBody className = " text-center " >
+   <img 
+   height="150" 
+   width="150" 
+   className= "rounded-circle img-thumbnail border-danger "
+   src={details.picture?.large} alt="Hey" />
+  <CardTitle className="text-primary" >
+  <h1>
+  <span className="pr-2">
+  {details.name?.title}
+  </span>
+  <span className = "pr-2">
+  {details.name?.first}
+  </span>
+  <span>
+  {details.name?.last}
+  </span>
+  </h1>
+  </CardTitle>
+   </CardBody>
+ <CardText>
+ <FaMapMarkedAlt className="pr-2" />
+ {details.location?.city}
+ <p>
+<FaPhone className="pr-2" />
+
+{details.phone}
+</p>
+<p>
+<FaEnvelope className="pr-2" />
+
+{details.email}
+</p>
+ </CardText>
+
+   </Card>
+    )}
+export default MyCard
